@@ -1,0 +1,3 @@
+*.o
+zig-cache
+example1/a

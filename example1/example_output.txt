@@ -1,0 +1,21 @@
+```
+foo: c_int@5
+bar(): 4
+Segmentation fault at address 0x5
+/home/u/Desktop/foo_2/example1/a.zig:9:29: 0x42574e in main (a)
+    print("foo: {}\n", .{foo[1]});
+                            ^
+/usr/lib/zig/std/start.zig:551:22: 0x4202aa in std.start.callMain (a)
+            root.main();
+                     ^
+/usr/lib/zig/std/start.zig:495:12: 0x4052c2 in std.start.callMainWithArgs (a)
+    return @call(.{ .modifier = .always_inline }, callMain, .{});
+           ^
+/usr/lib/zig/std/start.zig:409:17: 0x404532 in std.start.posixCallMainAndExit (a)
+    std.os.exit(@call(.{ .modifier = .always_inline }, callMainWithArgs, .{ argc, argv, envp }));
+                ^
+/usr/lib/zig/std/start.zig:322:5: 0x4043dd in std.start._start (a)
+    @call(.{ .modifier = .never_inline }, posixCallMainAndExit, .{});
+    ^
+fish: Job 1, './a' terminated by signal SIGABRT (Abort)
+```
