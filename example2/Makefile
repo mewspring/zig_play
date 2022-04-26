@@ -1,4 +1,4 @@
-all: b.zig c.zig b.o c.o
+all: b.zig c.zig b.o c.o d.o
 
 a.o: a.c
 	zig cc -I. -c -o $@ $<
@@ -19,9 +19,14 @@ c.o: c.zig
 	# build c.zig (FAIL)
 	zig build-obj $<
 
+d.o: d.zig
+	# build d.zig (FAIL)
+	zig build-obj $<
+
 clean:
 	${RM} -f b.zig
 	${RM} -f c.zig
 	${RM} -f a.o
 	${RM} -f b.o
 	${RM} -f c.o
+	${RM} -f d.o
